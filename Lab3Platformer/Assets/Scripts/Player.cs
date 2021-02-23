@@ -9,11 +9,12 @@ public class Player : MonoBehaviour
 
 
     float horizontal;
-    public float runSpeed = 5f;
-    public float jumpForce = 400f;
+    public float runSpeed = 10f;
+    public float jumpForce = 10f;
+    public int jumpCountMax = 2;
+    private int jumpCountCurrent;
 
     private bool jumping;
-   // private bool grounded;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         {
             sr.flipX = false;
         }
-        if (Input.GetKeyDown("space") && !jumping)
+        if (Input.GetKeyDown("space") && jumpCountCurrent > 0)
         {
             Jump();
         }
@@ -45,24 +46,16 @@ public class Player : MonoBehaviour
     {
         body.velocity = new Vector2(horizontal * runSpeed, body.velocity.y);
     }
-    private void Jump() 
+    private void Jump()
     {
-        body.AddForce(new Vector2(0f, jumpForce));
-        jumping = true;
+        body.velocity = new Vector2(body.velocity.x, jumpForce);
+        //jumping = true;
+        jumpCountCurrent--;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        jumping = false;
+        //jumping = false;
+        jumpCountCurrent = jumpCountMax;
     }
-    IEnumerator Jump2()
-    {
-        float timePassed = 0f;
-        while(timePassed < 0.5f)
-        {
-            timePassed += Time.deltaTime;
-            Debug.Log("I have been jumping for " + timePassed + " seconds!");
-            yield return null;
-        }    
-    }
-    
 }
