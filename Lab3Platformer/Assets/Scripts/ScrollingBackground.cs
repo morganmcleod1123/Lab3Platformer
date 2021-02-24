@@ -9,12 +9,18 @@ public class ScrollingBackground : MonoBehaviour
     private float viewZone = 10;
     private int leftIndex;
     private int rightIndex;
+    private float lastCameraX;
 
     public float backgroundSize;
+    public float paralaxSpeed;
+
+
+    public bool scrolling, paralax;
 
     // Start is called before the first frame update
     void Start()
     {
+        lastCameraX = cameraTransform.position.x;
         cameraTransform = Camera.main.transform;
         layers = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
@@ -29,14 +35,26 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (paralax)
         {
-            ScrollLeft();
+            float deltaX = cameraTransform.position.x - lastCameraX;
+            transform.position += Vector3.right * (deltaX * paralaxSpeed);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+
+        lastCameraX = cameraTransform.position.x;
+
+        if (scrolling)
         {
-            ScrollRight();
+            if (cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
+            {
+                ScrollLeft();
+            }
+            if (cameraTransform.position.x > (layers[rightIndex].transform.position.x - viewZone))
+            {
+                ScrollRight();
+            }
         }
+
     }
 
 
