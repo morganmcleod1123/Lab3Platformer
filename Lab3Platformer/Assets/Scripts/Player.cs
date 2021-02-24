@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     float horizontal;
     public float runSpeed = 10f;
     public float jumpForce = 10f;
+    public float dashForce = 1500f;
     public int jumpCountMax = 2;
     private int jumpCountCurrent;
 
@@ -40,6 +41,10 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+        if(Input.GetKeyDown("left shift"))
+        {
+            Dash();
+        }
     }
 
     private void FixedUpdate()
@@ -49,13 +54,22 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpForce);
-        //jumping = true;
+        jumping = true;
         jumpCountCurrent--;
 
     }
+    private void Dash()
+    {
+        Debug.Log("You hit left shift");
+        //body.velocity = new Vector2(400f, body.velocity.y);
+        body.AddForce(new Vector2(dashForce, 0));
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //jumping = false;
-        jumpCountCurrent = jumpCountMax;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            jumping = false;
+            jumpCountCurrent = jumpCountMax;
+        }
     }
 }
