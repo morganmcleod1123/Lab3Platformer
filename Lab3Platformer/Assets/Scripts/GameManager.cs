@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+
     public void StartButton()
     {
         startButton.SetActive(false);

@@ -4,7 +4,9 @@ using UnityEngine;
 
 // Tileset: https://hello-tazzina.itch.io/greenwoods-ii
 
+// Font: The Oleaguid font was made by Arynoc
 
+// GUI background: https://opengameart.org/content/steam
 
 
 

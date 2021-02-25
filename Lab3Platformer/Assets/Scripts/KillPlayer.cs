@@ -20,7 +20,7 @@ public class KillPlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hey");
+            Debug.Log("Died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }    
     }
