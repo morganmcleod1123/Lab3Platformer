@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (horizontal > 0)
+        if (horizontal < 0)
         {
             sr.flipX = true;
         }
