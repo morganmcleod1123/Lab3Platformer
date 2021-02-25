@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Checkpoint Creation Tutorial https://youtu.be/ofCLJsSUom0
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public Vector2 lastCheckpointPos;
+    public Vector3 lastCheckpointPos;
+    public Vector3 gameStartPoint;
 
     private void Awake()
     {
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        lastCheckpointPos = gameStartPoint;
     }
 
     // Update is called once per frame

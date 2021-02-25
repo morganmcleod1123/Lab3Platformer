@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public int jumpCountMax = 2;
     private int jumpCountCurrent;
 
-    private bool jumping;
+    //private bool jumping;
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +53,9 @@ public class Player : MonoBehaviour
     }
     private void Jump()
     {
+        Debug.Log("Jump");
         body.velocity = new Vector2(body.velocity.x, jumpForce);
-        jumping = true;
+        //jumping = true;
         jumpCountCurrent--;
 
     }
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            jumping = false;
+            //jumping = false;
             jumpCountCurrent = jumpCountMax;
         }
     }

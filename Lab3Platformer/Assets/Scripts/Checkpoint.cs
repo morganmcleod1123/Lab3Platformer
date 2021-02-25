@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Checkpoint Creation Tutorial https://youtu.be/ofCLJsSUom0
+
 public class Checkpoint : MonoBehaviour
 {
 
@@ -19,6 +21,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player hit");
             GameManager.Instance.lastCheckpointPos = transform.position;
         }
     }
