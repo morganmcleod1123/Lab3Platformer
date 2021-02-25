@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D body;
     SpriteRenderer sr;
+    Animator animator;
 
 
     float horizontal;
@@ -22,12 +23,14 @@ public class Player : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("horizontal", horizontal);
 
         if (horizontal < 0)
         {
