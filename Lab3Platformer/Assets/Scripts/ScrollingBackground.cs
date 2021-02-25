@@ -20,8 +20,8 @@ public class ScrollingBackground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastCameraX = cameraTransform.position.x;
         cameraTransform = Camera.main.transform;
+        lastCameraX = cameraTransform.position.x;
         layers = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
