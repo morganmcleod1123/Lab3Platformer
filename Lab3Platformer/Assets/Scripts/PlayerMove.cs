@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
+    Animator animator;
     
     private bool isGrounded;
     public Transform groundCheck;
@@ -28,11 +29,17 @@ public class PlayerMove : MonoBehaviour
     {
         extraJumps = extraJumpVal;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("horizontal", moveInput);
+        animator.SetFloat("vertical", rigidbody2D.velocity.y);
+        animator.SetBool("grounded", isGrounded);
+        animator.SetBool("dashing", isDashing);
+
         if (isGrounded)
         {
             extraJumps = extraJumpVal;
