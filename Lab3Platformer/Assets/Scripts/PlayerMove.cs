@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private GameManager gm;
     private Rigidbody2D rigidbody2D;
     Animator animator;
     
@@ -18,16 +19,16 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 10f;
     public float jumpForce = 10f;
     private int extraJumps;
-    public int extraJumpVal;
     private float moveInput;
     private bool facingRight = true;
-    
+
     public float dashDistance = 15f;
     bool isDashing;
 
     void Start()
     {
-        extraJumps = extraJumpVal;
+        gm = GameManager.Instance;
+        extraJumps = gm.extraJumpVal;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -42,7 +43,7 @@ public class PlayerMove : MonoBehaviour
 
         if (isGrounded)
         {
-            extraJumps = extraJumpVal;
+            extraJumps = gm.extraJumpVal;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
@@ -54,12 +55,12 @@ public class PlayerMove : MonoBehaviour
             rigidbody2D.velocity = Vector2.up * jumpForce;
         }
         //Dash left
-        if (Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0) && gm.canDash)
         {
             StartCoroutine(Dash(-1f));
         }
         //Dash Right
-        if(Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0)
+        if((Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0) && gm.canDash)
         {
             StartCoroutine(Dash(1f));
         }

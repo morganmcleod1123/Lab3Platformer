@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public Vector3 lastCheckpointPos;
     public Vector3 gameStartPoint;
 
+    public int extraJumpVal;
+    public bool canDash;
+
+
     public GameObject startButton;
     public GameObject backgroundImage;
 
