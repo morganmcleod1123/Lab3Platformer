@@ -15,16 +15,11 @@ public class SecondaryMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void BackButton()
     {
         backButton.SetActive(false);
         StartCoroutine(ColorLerp(startImage.GetComponent<Image>().color, 1));
+        Debug.Log("back button pressed");
     }
 
 

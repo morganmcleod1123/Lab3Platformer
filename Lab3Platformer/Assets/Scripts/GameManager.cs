@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
+using UnityEngine.SceneManagement;
+using TMPro;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -12,9 +17,9 @@ public class GameManager : MonoBehaviour
     public int extraJumpVal;
     public bool canDash;
 
+    public GameObject dialogueBox;
+    public GameObject dialogueText;
 
-    public GameObject startButton;
-    public GameObject backgroundImage;
 
     private void Awake()
     {
@@ -39,35 +44,30 @@ public class GameManager : MonoBehaviour
         
     }
 
-
-
-    public void StartButton()
+    public void StartDialogue(string text)
     {
-        startButton.SetActive(false);
-        StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 4));
+        dialogueBox.SetActive(true);
+        dialogueText.GetComponent<TextMeshProUGUI>().text = text;
     }
 
-    public void GameOver()
+    public void HideDialogue()
     {
-        startButton.SetActive(true);
-        StopAllCoroutines();
-        //HideDialog();
-        StartCoroutine(ColorLerp(new Color(1, 1, 1, 1), 1));
-
+        dialogueBox.SetActive(false);
     }
 
-    IEnumerator ColorLerp(Color endValue, float duration)
-    {
-        float time = 0;
-        Image sprite = backgroundImage.GetComponent<Image>();
-        Color startValue = sprite.color;
 
-        while(time < duration)
-        {
-            sprite.color = Color.Lerp(startValue, endValue, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        sprite.color = endValue;
-    }
+    //IEnumerator ColorLerp(Color endValue, float duration)
+    //{
+    //    float time = 0;
+    //    Image sprite = backgroundImage.GetComponent<Image>();
+    //    Color startValue = sprite.color;
+    //
+    //    while(time < duration)
+    //    {
+    //        sprite.color = Color.Lerp(startValue, endValue, time / duration);
+    //        time += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    sprite.color = endValue;
+    // }
 }

@@ -24,6 +24,7 @@ public class StartMenu : MonoBehaviour
     {
         startButton.SetActive(false);
         StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 4));
+        Debug.Log("start button pressed");
         // MOVE TO LEVEL 1 SCENE
     }
 
@@ -31,12 +32,14 @@ public class StartMenu : MonoBehaviour
     {
         startButton.SetActive(false);
         StartCoroutine(ColorLerp(creditImage.GetComponent<Image>().color, 1));
+        Debug.Log("credits button pressed.");
     }
 
     public void ControlsButton()
     {
         startButton.SetActive(false);
         StartCoroutine(ColorLerp(controlImage.GetComponent<Image>().color, 1));
+        Debug.Log("controls button pressed.");
     }
 
 

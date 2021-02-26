@@ -171,9 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138963f7f17054749aea00685934a769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 8
   dashSpeed: 10
-  jumpForce: 10
+  jumpForce: 5
   jumpCountMax: 2
 --- !u!114 &4578943510714030250
 MonoBehaviour:
@@ -232,5 +232,4 @@ MonoBehaviour:
     m_Bits: 256
   moveSpeed: 10
   jumpForce: 10
-  extraJumpVal: 1
   dashDistance: 10
