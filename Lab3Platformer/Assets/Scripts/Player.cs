@@ -10,13 +10,14 @@ public class Player : MonoBehaviour
 
 
     float horizontal;
+    float vertical;
     public float runSpeed = 10f;
+    public float dashSpeed = 10f;
     public float jumpForce = 10f;
-    public float dashForce = 1500f;
     public int jumpCountMax = 2;
     private int jumpCountCurrent;
 
-    //private bool jumping;
+    private bool dashing;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("horizontal", horizontal);
+        
+        
 
         if (horizontal < 0)
         {
@@ -44,35 +48,44 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        if(Input.GetKeyDown("left shift"))
-        {
+        if (Input.GetKeyDown("left shift")) {
             Dash();
         }
+        
     }
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * runSpeed, body.velocity.y);
+        if (!dashing)
+        {
+            body.velocity = new Vector2(horizontal * runSpeed, body.velocity.y);
+        }
+        else {
+            StartCoroutine("TurnOffDashing");
+            StopCoroutine("TurnOffDashing");
+        }
+    }
+    IEnumerator TurnOffDashing()
+    {
+        yield return new WaitForSeconds(0.1f);
+        dashing = false;
     }
     private void Jump()
     {
         Debug.Log("Jump");
         body.velocity = new Vector2(body.velocity.x, jumpForce);
-        //jumping = true;
         jumpCountCurrent--;
 
     }
     private void Dash()
     {
-        Debug.Log("You hit left shift");
-        //body.velocity = new Vector2(400f, body.velocity.y);
-        body.AddForce(new Vector2(dashForce, 0));
-    }
+        dashing = true;
+        body.velocity = new Vector2(horizontal *  dashSpeed, vertical *  dashSpeed);
+    }    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            //jumping = false;
             jumpCountCurrent = jumpCountMax;
         }
     }
