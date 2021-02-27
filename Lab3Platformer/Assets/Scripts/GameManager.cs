@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Vector3 gameStartPoint;
 
     public int extraJumpVal;
+    public int dashNumber;
     public bool canDash;
 
     public GameObject dialogueBox;

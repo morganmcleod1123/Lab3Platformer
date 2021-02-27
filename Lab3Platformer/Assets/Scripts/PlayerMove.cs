@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public ParticleSystem dust;
+    public TrailRenderer trail;
     private GameManager gm;
     private Rigidbody2D rigidbody2D;
     Animator animator;
@@ -19,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 10f;
     public float jumpForce = 10f;
     private int extraJumps;
+    private int dashCount;
     private float moveInput;
     private bool facingRight = true;
 
@@ -27,8 +30,11 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        trail = GetComponentInChildren<TrailRenderer>();
+        trail.emitting = false;
         gm = GameManager.Instance;
         extraJumps = gm.extraJumpVal;
+        dashCount = gm.dashNumber;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -44,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         if (isGrounded)
         {
             extraJumps = gm.extraJumpVal;
+            dashCount = gm.dashNumber;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
@@ -55,12 +62,12 @@ public class PlayerMove : MonoBehaviour
             rigidbody2D.velocity = Vector2.up * jumpForce;
         }
         //Dash left
-        if ((Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0) && gm.canDash)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0) && (gm.canDash && dashCount > 0))
         {
             StartCoroutine(Dash(-1f));
         }
         //Dash Right
-        if((Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0) && gm.canDash)
+        if((Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0) && (gm.canDash && dashCount > 0))
         {
             StartCoroutine(Dash(1f));
         }
@@ -92,11 +99,15 @@ public class PlayerMove : MonoBehaviour
     IEnumerator Dash(float direction)
     {
         isDashing = true;
+        dashCount--;
+        trail.emitting = true;
+        dust.Play();
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0f);
         rigidbody2D.AddForce(new Vector2(dashDistance * direction, 0f), ForceMode2D.Impulse);
         float gravity = rigidbody2D.gravityScale;
         rigidbody2D.gravityScale = 0;
         yield return new WaitForSeconds(0.4f);
+        trail.emitting = false;
         isDashing = false;
         rigidbody2D.gravityScale = gravity;
     }
