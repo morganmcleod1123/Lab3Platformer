@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public string newLevel;
 
+    public GameObject canvas;
+    public GameObject events;
 
 
     private void Awake()
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
+            DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(events);
         } else
         {
             Destroy(gameObject);
@@ -74,7 +78,15 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath(GameObject player)
     {
         player.transform.position = lastCheckpointPos;
-        Debug.Log("'respawned' after death.");
+    }
+
+
+    public void addJump()
+    {
+        if (extraJumpVal < 1)
+        {
+            extraJumpVal += 1;
+        }
     }
 
 }
