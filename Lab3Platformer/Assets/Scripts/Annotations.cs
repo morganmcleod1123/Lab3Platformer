@@ -8,6 +8,9 @@ using UnityEngine;
 
 // GUI background: https://opengameart.org/content/steam
 
+// Music "The Pilgrimage": https://opengameart.org/content/the-pilgrimage-0
+// Crash : https://opengameart.org/content/crash-collision
+
 
 
 public class Annotations : MonoBehaviour

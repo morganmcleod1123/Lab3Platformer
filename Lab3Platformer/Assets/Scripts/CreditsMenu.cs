@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class SecondaryMenu : MonoBehaviour
-{
-    public GameObject thisImage;
+
+public class CreditsMenu : MonoBehaviour
+{ 
+    public GameObject creditsImage;
     public GameObject startImage;
     public GameObject backButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void BackButton()
     {
-        backButton.SetActive(false);
-        StartCoroutine(ColorLerp(startImage.GetComponent<Image>().color, 1));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("back button pressed");
     }
 
@@ -26,7 +27,8 @@ public class SecondaryMenu : MonoBehaviour
     IEnumerator ColorLerp(Color endValue, float duration)
     {
         float time = 0;
-        Image sprite = thisImage.GetComponent<Image>();
+
+        Image sprite = creditsImage.GetComponent<Image>();
         Color startValue = sprite.color;
 
         while (time < duration)

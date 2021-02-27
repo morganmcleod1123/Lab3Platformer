@@ -25,7 +25,7 @@ public class StartMenu : MonoBehaviour
 
     public void StartButton()
     {
-        //startImage.SetActive(false);
+        startImage.SetActive(false);
         StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 1));
         Debug.Log("start button pressed");
         SceneManager.LoadScene("Level 1");
