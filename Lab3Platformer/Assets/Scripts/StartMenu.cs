@@ -15,7 +15,6 @@ public class StartMenu : MonoBehaviour
     public GameObject creditImage;
     public GameObject controlImage;
 
-    public string newLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -26,22 +25,26 @@ public class StartMenu : MonoBehaviour
 
     public void StartButton()
     {
-        startButton.SetActive(false);
-        StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 4));
+        //startImage.SetActive(false);
+        StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 1));
         Debug.Log("start button pressed");
-        SceneManager.LoadScene(newLevel);
+        SceneManager.LoadScene("Level 1");
     }
 
     public void CreditsButton()
     {
+        startImage.SetActive(false);
         startButton.SetActive(false);
+        creditImage.SetActive(true);
         StartCoroutine(ColorLerp(creditImage.GetComponent<Image>().color, 1));
         Debug.Log("credits button pressed.");
     }
 
     public void ControlsButton()
     {
+        startImage.SetActive(false);
         startButton.SetActive(false);
+        controlImage.SetActive(true);
         StartCoroutine(ColorLerp(controlImage.GetComponent<Image>().color, 1));
         Debug.Log("controls button pressed.");
     }

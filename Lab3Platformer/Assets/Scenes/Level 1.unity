@@ -16410,6 +16410,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 449465904}
   dialogueText: {fileID: 1028128712}
   deathSound: {fileID: 1291435938}
+  newLevel: 
 --- !u!4 &1740225892
 Transform:
   m_ObjectHideFlags: 0

@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
-
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -21,7 +18,10 @@ public class GameManager : MonoBehaviour
     public GameObject dialogueText;
     private Coroutine dialogCo;
 
-    public AudioSource deathSound;
+
+    public string newLevel;
+
+
 
     private void Awake()
     {
@@ -72,26 +72,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath(GameObject player)
     {
-        deathSound.Play();
         player.transform.position = lastCheckpointPos;
         Debug.Log("'respawned' after death.");
     }
 
-
-
-
-    //IEnumerator ColorLerp(Color endValue, float duration)
-    //{
-    //    float time = 0;
-    //    Image sprite = backgroundImage.GetComponent<Image>();
-    //    Color startValue = sprite.color;
-    //
-    //    while(time < duration)
-    //    {
-    //        sprite.color = Color.Lerp(startValue, endValue, time / duration);
-    //        time += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    sprite.color = endValue;
-    // }
 }
