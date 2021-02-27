@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 677976580}
   - component: {fileID: 677976579}
   - component: {fileID: 677976578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -16409,6 +16409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastCheckpointPos: {x: 0, y: 0, z: 0}
   gameStartPoint: {x: 0, y: 0, z: 0}
+  extraJumpVal: 0
+  canDash: 0
   startButton: {fileID: 0}
   backgroundImage: {fileID: 0}
 --- !u!4 &1866196806

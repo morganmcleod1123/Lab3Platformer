@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 4578943510714030246}
   - component: {fileID: 4578943510714030245}
   - component: {fileID: 4578943510714030249}
-  - component: {fileID: 4578943510714030251}
   - component: {fileID: 4578943510714030250}
   - component: {fileID: 4578943510714030248}
   - component: {fileID: -611879661880153818}
@@ -230,6 +229,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  moveSpeed: 10
+  moveSpeed: 8
   jumpForce: 10
   dashDistance: 10
