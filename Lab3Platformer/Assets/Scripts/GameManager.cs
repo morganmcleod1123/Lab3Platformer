@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject dialogueBox;
     public GameObject dialogueText;
+    private Coroutine dialogCo;
 
+    public AudioSource deathSound;
 
     private void Awake()
     {
@@ -47,13 +49,35 @@ public class GameManager : MonoBehaviour
     public void StartDialogue(string text)
     {
         dialogueBox.SetActive(true);
-        dialogueText.GetComponent<TextMeshProUGUI>().text = text;
+        dialogCo = StartCoroutine(TypeText(text));
     }
 
     public void HideDialogue()
     {
         dialogueBox.SetActive(false);
+        StopCoroutine(dialogCo);
     }
+
+
+    IEnumerator TypeText(string text)
+    {
+        dialogueText.GetComponent<TextMeshProUGUI>().text = "";
+        foreach(char c in text.ToCharArray())
+        {
+            dialogueText.GetComponent<TextMeshProUGUI>().text += c;
+            yield return new WaitForSeconds(.03f);
+        }
+
+    }
+
+    public void PlayerDeath(GameObject player)
+    {
+        deathSound.Play();
+        player.transform.position = lastCheckpointPos;
+        Debug.Log("'respawned' after death.");
+    }
+
+
 
 
     //IEnumerator ColorLerp(Color endValue, float duration)

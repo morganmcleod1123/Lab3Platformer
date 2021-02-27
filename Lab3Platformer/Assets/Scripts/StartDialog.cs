@@ -22,6 +22,7 @@ public class StartDialog : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("starting dialog");
             GameManager.Instance.StartDialogue(myText);
         }
     }

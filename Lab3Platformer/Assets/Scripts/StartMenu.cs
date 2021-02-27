@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class StartMenu : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class StartMenu : MonoBehaviour
     public GameObject startImage;
     public GameObject creditImage;
     public GameObject controlImage;
+
+    public string newLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,7 @@ public class StartMenu : MonoBehaviour
         startButton.SetActive(false);
         StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 4));
         Debug.Log("start button pressed");
-        // MOVE TO LEVEL 1 SCENE
+        SceneManager.LoadScene(newLevel);
     }
 
     public void CreditsButton()

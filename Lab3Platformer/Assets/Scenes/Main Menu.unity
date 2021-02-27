@@ -631,6 +631,7 @@ MonoBehaviour:
   startImage: {fileID: 785782232}
   creditImage: {fileID: 1187528624}
   controlImage: {fileID: 1138103659}
+  newLevel: Level 1
 --- !u!1 &848420434
 GameObject:
   m_ObjectHideFlags: 0

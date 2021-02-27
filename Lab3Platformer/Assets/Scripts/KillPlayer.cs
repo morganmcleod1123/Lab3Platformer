@@ -18,10 +18,11 @@ public class KillPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Died");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }    
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.PlayerDeath(collision.gameObject);
+        }
     }
 }
