@@ -18,6 +18,7 @@ public class ControlsMenu : MonoBehaviour
 
     public void BackButton()
     {
+        controlsImage.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("back button pressed");
     }

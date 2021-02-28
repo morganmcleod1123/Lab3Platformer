@@ -19,6 +19,7 @@ public class CreditsMenu : MonoBehaviour
 
     public void BackButton()
     {
+        creditsImage.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("back button pressed");
     }
