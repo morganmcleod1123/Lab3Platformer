@@ -9,6 +9,7 @@ public class GiveDash : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             GameManager.Instance.canDash = true;
+            GameManager.Instance.dashNumber = 1;
         }
     }
 }
