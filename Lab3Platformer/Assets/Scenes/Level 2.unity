@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af19a173d3f6c472e99012ee8a7f2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSize: 13
+  backgroundSize: 26
   paralaxSpeed: 0.2
   scrolling: 1
   paralax: 1
@@ -16565,7 +16565,7 @@ MonoBehaviour:
   newLevel: Level 3
   spawnX: -5
   spawnY: -1
-  spawnZ: 0
+  spawnZ: -1
 --- !u!61 &1159355626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18811,7 +18811,7 @@ Transform:
   m_GameObject: {fileID: 1381898193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 50}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalScale: {x: 2, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 154329480}
   m_RootOrder: 1
@@ -18971,7 +18971,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20308,8 +20308,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730634186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13, y: 0, z: 50}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalPosition: {x: -26, y: 0, z: 50}
+  m_LocalScale: {x: 2, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 154329480}
   m_RootOrder: 0
@@ -25291,8 +25291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858820710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13, y: 0, z: 50}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalPosition: {x: 26, y: 0, z: 50}
+  m_LocalScale: {x: 2, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 154329480}
   m_RootOrder: 2
@@ -25430,7 +25430,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7cae03832b3aa450f8bad72058e189fe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25545,11 +25545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7197466
+      value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.301794
+      value: -4.73
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.z

@@ -6115,7 +6115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8411,7 +8411,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8486,7 +8486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastCheckpointPos: {x: 0, y: 0, z: 0}
-  gameStartPoint: {x: -5.5, y: -1.9, z: 0}
+  gameStartPoint: {x: -5.5, y: -1.9, z: -8}
   extraJumpVal: 1
   dashNumber: 1
   canDash: 0
@@ -8538,7 +8538,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7cae03832b3aa450f8bad72058e189fe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

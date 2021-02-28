@@ -2572,7 +2572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516905091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6168, y: -5.3737, z: 0}
+  m_LocalPosition: {x: -5.23, y: -5.3737, z: 0}
   m_LocalScale: {x: 2.6159537, y: 3.2066696, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2673,7 +2673,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2810,11 +2810,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.56
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.73
+      value: -6.93
       objectReference: {fileID: 0}
     - target: {fileID: 4578943510714030247, guid: 1ce5b75f848c70245bf547d09dc49d7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4261,8 +4261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Level 2
-  spawnX: 0
-  spawnY: -2
+  spawnX: -1
+  spawnY: -4
   spawnZ: -10
 --- !u!61 &1112245837
 BoxCollider2D:
@@ -16048,7 +16048,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7cae03832b3aa450f8bad72058e189fe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastCheckpointPos: {x: 0, y: 0, z: 0}
-  gameStartPoint: {x: 0, y: 0, z: 0}
+  gameStartPoint: {x: -6, y: -6.9, z: -1}
   extraJumpVal: 0
   dashNumber: 0
   canDash: 0
