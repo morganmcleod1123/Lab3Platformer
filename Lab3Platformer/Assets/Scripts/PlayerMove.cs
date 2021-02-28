@@ -62,12 +62,12 @@ public class PlayerMove : MonoBehaviour
             rigidbody2D.velocity = Vector2.up * jumpForce;
         }
         //Dash left
-        if ((Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0) && (gm.canDash && dashCount > 0))
+        if ((Input.GetKeyDown(KeyCode.LeftShift) && moveInput < 0) && (gm.canDash && dashCount > 0) && !isDashing)
         {
             StartCoroutine(Dash(-1f));
         }
         //Dash Right
-        if((Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0) && (gm.canDash && dashCount > 0))
+        if((Input.GetKeyDown(KeyCode.LeftShift) && moveInput > 0) && (gm.canDash && dashCount > 0) && !isDashing)
         {
             StartCoroutine(Dash(1f));
         }

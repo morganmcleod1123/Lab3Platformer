@@ -25114,7 +25114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastCheckpointPos: {x: 0, y: 0, z: 0}
   gameStartPoint: {x: 0, y: 0, z: 0}
-  extraJumpVal: 1
+  extraJumpVal: 0
   dashNumber: 0
   canDash: 0
   dialogueBox: {fileID: 1435517965}
