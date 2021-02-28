@@ -2,6 +2,8 @@ Lab 3: Soror
 
 Intent - Our intent was to create a fun 2D platformer with some mechanics familiar to games we have played ourselves.
 
+Narrative Structure - The player controls a knight who has lost her sister in a strange and unfamiliar land. She starts with only her basic movement, but as she explores through the unfamiliar environment, she gains new abilities to help her along the way. The search for the sister pushes the player forward, and the acquisition of new abilities lends a sense of progression.
+
 Mechanics - The mechanics in our game included basic movement, jumping, one-way platforms, spikes that would kill the player, checkpoints, double-jumping, and dashing. 
 
 Aesthetics - We shot for a more mysterious and dark atmosphere. We wanted to blend a dark woods environment with old ruins to sell a feeling of a mysterious and slightly spooky medieval setting. Though we had this mysterious and spooky tone, we also wanted to include bits of beauty with the trees.
