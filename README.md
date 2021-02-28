@@ -1,4 +1,5 @@
 Lab 3: Soror
+
 Intent - Our intent was to create a fun 2D platformer with some mechanics familiar to games we have played ourselves.
 
 Mechanics - The mechanics in our game included basic movement, jumping, one-way platforms, spikes that would kill the player, checkpoints, double-jumping, and dashing. 
