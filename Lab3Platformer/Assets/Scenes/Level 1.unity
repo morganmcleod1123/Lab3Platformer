@@ -4262,7 +4262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newLevel: Level 2
   spawnX: 0
-  spawnY: 0
+  spawnY: -2
   spawnZ: -10
 --- !u!61 &1112245837
 BoxCollider2D:
