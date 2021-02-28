@@ -16298,8 +16298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Level 3
-  spawnX: 0
-  spawnY: 0
+  spawnX: -5
+  spawnY: -1
   spawnZ: 0
 --- !u!61 &1159355626
 BoxCollider2D:
@@ -18706,7 +18706,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
